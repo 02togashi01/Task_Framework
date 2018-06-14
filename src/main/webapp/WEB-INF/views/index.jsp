@@ -8,9 +8,8 @@
 <title>TOP画面</title>
 </head>
 <body>
-	<form:form action="login" method="get" modelAttribute="loginForm">
-		<a href="login.jsp">通常ログイン</a>
-		<form:button>通常ログイン</form:button>
+	<form:form action="login" method="get" modelAttribute="command">
+		<a href="login">通常ログイン</a>
 	</form:form>
 </body>
 </html>

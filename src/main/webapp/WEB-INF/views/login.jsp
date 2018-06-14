@@ -10,7 +10,10 @@
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body>
-  <form:form action="login" modelAttribute="loginForm" >
+ <c:if test="${not empty msg}">
+    <p>${msg}</p>
+  </c:if>
+  <form:form action="login" method="post" modelAttribute="command" >
   <p>
   <label>ID</label><form:input path="id" />
   </p>
@@ -20,5 +23,8 @@
   <form:button>ログイン</form:button>
 </form:form>
 
+<div>
+  <a href="index">TOP画面へ</a>
+</div>
 </body>
 </html>

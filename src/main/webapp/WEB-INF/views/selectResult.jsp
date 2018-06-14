@@ -10,7 +10,7 @@
 <link href="${pageContext.request.contextPath}/css/commons.css" rel="stylesheet">
 </head>
 <body>
-	<table>
+    <table border="1">
 		<caption>検索結果</caption>
 		<thead>
 			<tr>
@@ -20,17 +20,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="user" items="${userList}">
+			<c:forEach var="Userinfo" items="${UserinfoList}">
 				<tr>
-					<td>${fn:escapeXml(user.userId)}</td>
-					<td>${fn:escapeXml(user.userName)}</td>
-					<td>${fn:escapeXml(user.telephone)}</td>
+					<td>${user.userId}</td>
+					<td>${user.userName}</td>
+					<td>${user.telephone}</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
 	<div>
-		<a href="menu.jsp">メニューに戻る</a>
+		<a href="menu">メニューに戻る</a>
 	</div>
 </body>
 </html>

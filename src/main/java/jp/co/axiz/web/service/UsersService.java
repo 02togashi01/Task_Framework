@@ -4,11 +4,14 @@ import java.sql.Connection;
 import java.util.Collections;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import jp.co.axiz.web.dao.UsersDao;
 import jp.co.axiz.web.entity.Userinfo;
 import jp.co.axiz.web.entity.Users;
 import jp.co.axiz.web.util.Dbutill;
 
+@Service
 public class UsersService {
 
 	public Users authentication(String id, String pass) {
