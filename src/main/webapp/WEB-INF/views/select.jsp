@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>検索画面</title>
 <link href="css/commons.css" rel="stylesheet">
 </head>
@@ -21,11 +21,11 @@
 		検索したいデータ情報を入力してください<br> ※全て空白の場合は全検索を行います
 	</p>
 
-	<form:form action="select" method="get" modelAttribute="command">
+	<form:form action="list" method="get" modelAttribute="command">
 		<fieldset>
 			<div>
 				<label>ID</label>
-				<form:input path="id" /value="${fn:escapeXml(defo_id)}" />
+				<form:input path="id" value="${fn:escapeXml(defo_id)}" />
 				<form:errors path="id" cssStyle="color: red" />
 			</div>
 			<div>

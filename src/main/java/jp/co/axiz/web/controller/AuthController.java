@@ -30,7 +30,7 @@ public class AuthController {
 
 	//ログイン画面
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public String postLogin(@ModelAttribute("command") Form form, Model model) {
+	public String postLogin(@ModelAttribute("command") Form form, BindingResult bindingResult, Model model) {
 
 		String id = form.getId();
 		String pass = form.getPass();
@@ -65,7 +65,7 @@ public class AuthController {
 
 	//ログアウト
 		@RequestMapping(value="/logout", method=RequestMethod.POST)
-		public String logout(@ModelAttribute("command") Form form, Model model) {
+		public String logout(@ModelAttribute("command") Form form, BindingResult bindingResult, Model model) {
 
 			return "logout";
 		}

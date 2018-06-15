@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>TOP画面</title>
+<link href="/css/commons.css" rel="stylesheet">
 </head>
 <body>
 	<form:form action="login" method="get" modelAttribute="command">

@@ -12,7 +12,7 @@ import jp.co.axiz.web.entity.Form;
 @Controller
 public class IndexController {
 
-	@RequestMapping("/index")
+	@RequestMapping(value="/index",method = RequestMethod.GET)
 	public String index(@ModelAttribute("command") Form form, BindingResult bindingResult, Model model){
 
 	return "index";

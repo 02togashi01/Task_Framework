@@ -5,12 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>検索結果画面</title>
-<link href="${pageContext.request.contextPath}/css/commons.css" rel="stylesheet">
+<link href="/css/commons.css" rel="stylesheet">
 </head>
 <body>
-    <table border="1">
+	<table>
 		<caption>検索結果</caption>
 		<thead>
 			<tr>
@@ -22,9 +22,9 @@
 		<tbody>
 			<c:forEach var="Userinfo" items="${UserinfoList}">
 				<tr>
-					<td>${user.userId}</td>
-					<td>${user.userName}</td>
-					<td>${user.telephone}</td>
+					<td>${fn:escapeXml(Userinfo.usersId)}</td>
+					<td>${fn:escapeXml(Userinfo.usersName)}</td>
+					<td>${fn:escapeXml(Userinfo.telephone)}</td>
 				</tr>
 			</c:forEach>
 		</tbody>

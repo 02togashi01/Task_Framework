@@ -24,7 +24,12 @@ public class SelectController {
 	@Autowired
 	HttpSession hs;
 
-	@RequestMapping(value="/select",method=RequestMethod.GET)
+	@RequestMapping("/select")
+	public String select (@ModelAttribute("command") SelectForm form, BindingResult bindingResult, Model model) {
+		return "select";
+	}
+
+	@RequestMapping(value="/list",method=RequestMethod.GET)
 	public String login(@ModelAttribute("command") SelectForm form,BindingResult bindingResult, Model model){
 
 		// ログインID、パスワードを取得
@@ -41,7 +46,7 @@ public class SelectController {
 							model.addAttribute("UserinfoList", list);
 
 							// 次画面指定
-							return "selectResult.jsp";
+							return "selectResult";
 
 		}else if ((id != null && name == null && tel == null) || (!("".equals(id)) && "".equals(name)&& "".equals(tel))) {
 			//IDだけ
@@ -53,14 +58,14 @@ public class SelectController {
 
 			if (list ==null) {
 				model.addAttribute("msg", "入力されたデータはありませんでした。");
-				return "select.jsp";
+				return "select";
 			}
 
 			//List<Userinfo> list = userService.find();
 			model.addAttribute("UserinfoList", list);
 
 			// 次画面指定
-			return "selectResult.jsp";
+			return "selectResult";
 
 		}else if((id == null && name != null && tel == null) || ("".equals(id) && !("".equals(name))&& "".equals(tel))) {
 			//nameだけ空
@@ -70,14 +75,14 @@ public class SelectController {
 
 			if (list ==null) {
 				model.addAttribute("msg", "入力されたデータはありませんでした。");
-				return "select.jsp";
+				return "select";
 			}
 
 			//List<Userinfo> list = userService.find();
 			model.addAttribute("UserinfoList", list);
 
 			// 次画面指定
-			return "selectResult.jsp";
+			return "selectResult";
 
 		}else if((id == null && name == null && tel != null) || ("".equals(id) && "".equals(name)&& !("".equals(tel)))) {
 			//telだけ空
@@ -87,14 +92,14 @@ public class SelectController {
 
 			if (list ==null) {
 				model.addAttribute("msg", "入力されたデータはありませんでした。");
-				return "select.jsp";
+				return "select";
 			}
 
 			//List<Userinfo> list = userService.find();
 			model.addAttribute("UserinfoList", list);
 
 			// 次画面指定
-			return "selectResult.jsp";
+			return "selectResult";
 
 		}else if((id == null && name != null && tel != null) || ("".equals(id)) && !("".equals(name))&& !("".equals(tel))) {
 			//nameだけ空
@@ -105,14 +110,14 @@ public class SelectController {
 
 			if (list ==null) {
 				model.addAttribute("msg", "入力されたデータはありませんでした。");
-				return "select.jsp";
+				return "select";
 			}
 
 			//List<Userinfo> list = userService.find();
 			model.addAttribute("UserinfoList", list);
 
 			// 次画面指定
-			return "selectResult.jsp";
+			return "selectResult";
 
 		}else if((id != null && name == null && tel != null) || (!("".equals(id))) && "".equals(name)&& !("".equals(tel))) {
 			Integer iId = Integer.parseInt(id);
@@ -121,14 +126,14 @@ public class SelectController {
 
 			if (list ==null) {
 				model.addAttribute("msg", "入力されたデータはありませんでした。");
-				return "select.jsp";
+				return "select";
 			}
 
 			//List<Userinfo> list = userService.find();
 			model.addAttribute("UserinfoList", list);
 
 			// 次画面指定
-			return "selectResult.jsp";
+			return "selectResult";
 
 		}else if((id != null && name != null && tel == null) || (!("".equals(id))) && !("".equals(name))&& "".equals(tel)) {
 			Integer iId = Integer.parseInt(id);
@@ -137,14 +142,14 @@ public class SelectController {
 
 			if (list ==null) {
 				model.addAttribute("msg", "入力されたデータはありませんでした。");
-				return "select.jsp";
+				return "select";
 			}
 
 			//List<Userinfo> list = userService.find();
 			model.addAttribute("UserinfoList", list);
 
 			// 次画面指定
-			return "selectResult.jsp";
+			return "selectResult";
 		}else if((id != null && name != null && tel != null) || (!("".equals(id))) && !("".equals(name))&& !("".equals(tel))) {
 			Integer iId = Integer.parseInt(id);
 			UsersService userService = new UsersService();
@@ -152,14 +157,14 @@ public class SelectController {
 
 			if (list ==null) {
 				model.addAttribute("msg", "入力されたデータはありませんでした。");
-				return "select.jsp";
+				return "select";
 			}
 
 			//List<Userinfo> list = userService.find();
 			model.addAttribute("UserinfoList", list);
 
 			// 次画面指定
-			return "selectResult.jsp";
+			return "selectResult";
 		}
 		//request.setAttribute("msg", "入力されたデータはありませんでした。");
 

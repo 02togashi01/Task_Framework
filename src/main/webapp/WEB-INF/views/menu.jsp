@@ -9,11 +9,12 @@
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body>
- <c:if test="${not empty Name}">
-    <p>${Name}さん、こんにちは</p>
-  </c:if>
+
    <c:if test="${empty Name}">
     <meta http-equiv="Refresh" content="0;URL=index.jsp">
+  </c:if>
+   <c:if test="${not empty Name}">
+    <p>${Name}さん、こんにちは</p>
   </c:if>
 
 <p><a href="select">検索</a></p>
